@@ -1,18 +1,10 @@
-import smtplib
+TOKEN='6579196085:AAHPWo16Q_scDH5m_A4iQlz4O7REfmokMws'
+CHAT_ID='7284568121'
 
-email="henryremax70@outlook.com"
-receiver_email="pascalremax900@protonmail.com"
- 
-subject="subject the aksajjskdsdjn"
-message="message sdjsdjsdksjd 1234556789"
+import requests
+import re
 
-text=f"Subject:{subject}\n\n{message}"
+message="something we don't see everyday"
 
-server=smtplib.SMTP("smtp-mail.outlook.com",587)
-server.starttls()
-
-server.login(email,"Pjdsjdskjsdskewj9")
-
-server.sendmail(email,receiver_email,text)
-
-print("Email has been sent to "+receiver_email)
+url=f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={CHAT_ID}&text={message}"
+requests.get(url)
